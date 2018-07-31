@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeagueApi.Core;
+using System;
 
 namespace LeagueApi
 {
@@ -6,7 +7,12 @@ namespace LeagueApi
     {
         public static void Main(string[] args)
         {
-           
+            using(var api = new Api())
+            {
+                
+            }
+
+            Console.ReadLine();
         }
     }
 }
