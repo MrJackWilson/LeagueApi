@@ -4,18 +4,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeagueApi.Models
+namespace LeagueApi.Models.Champion
 {
     [JsonObject]
-    public class Champions : IEnumerable<Champion>
+    public class ChampionList : IEnumerable<Champion>
     {
         [JsonProperty("champions")]
         private IEnumerable<Champion> All { get; set; }
 
         public IEnumerator<Champion> GetEnumerator()
         {
-            foreach (var champion in All)
-                yield return champion;
+            return All.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()

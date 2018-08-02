@@ -4,30 +4,22 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using LeagueApi.Models.Status;
 
 namespace LeagueApi
 {
     public class Program
     {
+        private static readonly string _summonerId = "44997133";
+
         public static void Main(string[] args)
         {
-            using (var api = new Api("platform/v3/champions/"))
+            using (var api = new Api("status/v3/"))
             {
                 Task.Run(async () =>
                 {
-                    Console.WriteLine("Executing...");
+                    var status = await api.Execute<ShardStatus>($"shard-data");
 
-                    var allChampions = await api.Execute<Champions>("");
-
-                    if (allChampions != null && allChampions != null)
-                    {
-                        foreach (var champion in allChampions)
-                            champion.Log();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No results");
-                    }
                 }).Wait();
             }
 
