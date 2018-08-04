@@ -3,6 +3,7 @@ using LeagueApi.Resources.League;
 using LeagueApi.Resources.Match;
 using LeagueApi.Resources.Spectator;
 using LeagueApi.Resources.Status;
+using LeagueApi.Resources.Summoner;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +18,11 @@ namespace LeagueApi
 
         public static void Main(string[] args)
         {
-            using (var api = new Api("spectator/v3/"))
+            using (var api = new Api("summoner/v3/"))
             {
                 Task.Run(async () =>
                 {
-                    var result = await api.Execute<FeaturedGames>($"featured-games");
-
-                    Console.WriteLine(result.ClientRefreshInterval);
+                    var result = await api.Execute<Summoner>($"summoners/by-name/{Uri.EscapeUriString("Tennant Lady")}");
 
                 }).Wait();
             }
