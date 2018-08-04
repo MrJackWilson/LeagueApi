@@ -1,4 +1,4 @@
-﻿using LeagueApi.Enums;
+﻿using LeagueApi.Constants;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace LeagueApi
         private HttpClient _client { get; }
         private string _baseUrl { get; set; } = "https://euw1.api.riotgames.com/lol/";
         private string _region { get; set; }
-        private string _apiKey => "RGAPI-ea4018d8-30f2-4db2-bbd4-d57f11deab3d";
+        private string _apiKey => "RGAPI-80e3876e-2f29-4bb2-b5c9-1e0a9bd34409";
         private string _apiKeyHeaderName => "X-Riot-Token";
 
         public Api(string region, string baseUrl)

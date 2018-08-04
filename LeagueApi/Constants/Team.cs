@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeagueApi.Enums
+namespace LeagueApi.Constants
 {
     public static class Team
     {
-        public static int Blue = 100;
-        public static int Red = 200;
+        public const int Blue = 100;
+        public const int Red = 200;
     }
 }

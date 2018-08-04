@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeagueApi.Enums
+namespace LeagueApi.Constants
 {
     public static class Region
     {
-        public static string NA1 = "NA1";
-        public static string EUW1 = "EUW1";
+        public const string NA1 = "NA1";
+        public const string EUW1 = "EUW1";
     }
 }

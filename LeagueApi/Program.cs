@@ -1,4 +1,4 @@
-﻿using LeagueApi.Enums;
+﻿using LeagueApi.Constants;
 using LeagueApi.Resources.League;
 using LeagueApi.Resources.Status;
 using System;
@@ -14,7 +14,7 @@ namespace LeagueApi
 
         public static void Main(string[] args)
         {
-            using (var api = new Api("league/v3/"))
+            using (var api = new Api("match/v3/"))
             {
                 Task.Run(async () =>
                 {
