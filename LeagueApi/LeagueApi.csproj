@@ -13,5 +13,6 @@
     <Folder Include="Constants\" />
     <Folder Include="Resources\Spectator\" />
     <Folder Include="Resources\Summoner\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>
