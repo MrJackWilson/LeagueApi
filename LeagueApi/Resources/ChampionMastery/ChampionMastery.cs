@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeagueApi.Models.ChampionMastery
+namespace LeagueApi.Resources.ChampionMastery
 {
     public class ChampionMastery
     {

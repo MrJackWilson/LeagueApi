@@ -14,7 +14,7 @@ namespace LeagueApi
         private HttpClient _client { get; }
         private string _baseUrl { get; set; } = "https://euw1.api.riotgames.com/lol/";
         private string _region { get; set; }
-        private string _apiKey => "RGAPI-7a9d092b-19f1-410f-b449-8e45ed9407d5";
+        private string _apiKey => "RGAPI-ea4018d8-30f2-4db2-bbd4-d57f11deab3d";
         private string _apiKeyHeaderName => "X-Riot-Token";
 
         public Api(string region, string baseUrl)
@@ -25,7 +25,7 @@ namespace LeagueApi
             _baseUrl += baseUrl;
         }
 
-        public Api(string baseUrl) : this(Region.EuropeWest, baseUrl) { }
+        public Api(string baseUrl) : this(Region.EUW1, baseUrl) { }
 
         public async Task<TReturn> Execute<TReturn>(string resource)
         {

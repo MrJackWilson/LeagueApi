@@ -6,7 +6,7 @@ namespace LeagueApi.Enums
 {
     public static class Region
     {
-        public static string NorthAmerica = "NA1";
-        public static string EuropeWest = "EUW1";
+        public static string NA1 = "NA1";
+        public static string EUW1 = "EUW1";
     }
 }

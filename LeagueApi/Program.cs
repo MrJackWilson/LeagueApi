@@ -1,10 +1,10 @@
-﻿using LeagueApi;
-using LeagueApi.Models;
+﻿using LeagueApi.Enums;
+using LeagueApi.Resources.League;
+using LeagueApi.Resources.Status;
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using LeagueApi.Models.Status;
 
 namespace LeagueApi
 {
@@ -14,11 +14,11 @@ namespace LeagueApi
 
         public static void Main(string[] args)
         {
-            using (var api = new Api("status/v3/"))
+            using (var api = new Api("league/v3/"))
             {
                 Task.Run(async () =>
                 {
-                    var status = await api.Execute<ShardStatus>($"shard-data");
+                    var result = await api.Execute<IEnumerable<LeaguePosition>>($"positions/by-summoner/{_summonerId}");
 
                 }).Wait();
             }

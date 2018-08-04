@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeagueApi.Models.Status
+namespace LeagueApi.Resources.Status
 {
     public class Translation
     {
