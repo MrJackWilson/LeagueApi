@@ -12,12 +12,10 @@ namespace LeagueApi
     {
         public static void Main(string[] args)
         {
-            Task.Run(async () =>
-            {
-                using (var api = new MatchApi())
-                {
-                }
-            }).Wait();
+            ChampionStaticDataApi.Load();
+            var champ103 = ChampionStaticDataApi.GetById(103);
+
+            Console.WriteLine(champ103.Name);
         }
     }
 }
