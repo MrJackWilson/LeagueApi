@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LeagueApi.Exceptions;
 using LeagueApi.Api;
+using LeagueApi.Resources.Match;
 
 namespace LeagueApi
 {
@@ -13,11 +14,8 @@ namespace LeagueApi
         {
             Task.Run(async () =>
             {
-                using (var api = new LolStatusApi())
+                using (var api = new MatchApi())
                 {
-                    var status = await api.GetShardStatus();
-
-                    Console.WriteLine(status.HostName);
                 }
             }).Wait();
         }
