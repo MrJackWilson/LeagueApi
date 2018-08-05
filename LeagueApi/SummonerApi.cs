@@ -14,7 +14,7 @@ namespace LeagueApi
             _apiHelper = new ApiHelper("summoner/v3/");
         }
 
-        public async Task<Summoner> GetByAccountId(string accountId)
+        public async Task<Summoner> GetByAccountId(long accountId)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace LeagueApi
             }
         }
 
-        public async Task<Summoner> GetBySummonerId(string summonerId)
+        public async Task<Summoner> GetBySummonerId(long summonerId)
         {
             try
             {
