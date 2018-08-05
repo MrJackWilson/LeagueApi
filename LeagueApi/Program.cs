@@ -13,9 +13,11 @@ namespace LeagueApi
         {
             Task.Run(async () =>
             {
-                using (var api = new ChampionApi())
+                using (var api = new LolStatusApi())
                 {
-                    Console.WriteLine(await api.GetChampionById(103));
+                    var status = await api.GetShardStatus();
+
+                    Console.WriteLine(status.HostName);
                 }
             }).Wait();
         }
