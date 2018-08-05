@@ -15,7 +15,7 @@ namespace LeagueApi.Api
         HttpClient _client { get; }
         string _baseUrl { get; set; } = "https://euw1.api.riotgames.com/lol/";
         string _region { get; set; }
-        string _apiKey => "RGAPI-a8f9b12c-ffc3-4183-aec1-401f9a72e27c";
+        string _apiKey => "RGAPI-35beb46c-09d1-4860-9224-13e8ace2ece1";
         string _apiKeyHeaderName => "X-Riot-Token";
 
         protected BaseApi(string region, string baseUrl)

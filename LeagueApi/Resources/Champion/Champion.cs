@@ -25,7 +25,7 @@ namespace LeagueApi.Resources.Champion
         [JsonProperty("freeToPlay")]
         public bool FreeToPlay { get; set; }
 
-        public void Log()
+        public override string ToString()
         {
             var sb = new StringBuilder();
 
@@ -36,7 +36,7 @@ namespace LeagueApi.Resources.Champion
             sb.Append($"Active: {Active}\n");
             sb.Append($"Free to play: {FreeToPlay}\n\n");
 
-            Console.WriteLine(sb.ToString());
+            return sb.ToString();
         }
     }
 }
