@@ -8,9 +8,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeagueApi
+namespace LeagueApi.Api
 {
-    public class ApiHelper : IDisposable
+    public abstract class BaseApi : IDisposable
     {
         HttpClient _client { get; }
         string _baseUrl { get; set; } = "https://euw1.api.riotgames.com/lol/";
@@ -18,7 +18,7 @@ namespace LeagueApi
         string _apiKey => "RGAPI-a8f9b12c-ffc3-4183-aec1-401f9a72e27c";
         string _apiKeyHeaderName => "X-Riot-Token";
 
-        public ApiHelper(string region, string baseUrl)
+        protected BaseApi(string region, string baseUrl)
         {
             _client = new HttpClient();
             _client.DefaultRequestHeaders.Add(_apiKeyHeaderName, _apiKey);
@@ -26,11 +26,11 @@ namespace LeagueApi
             _baseUrl += baseUrl;
         }
 
-        public ApiHelper(string baseUrl) : this(Region.EUW1, baseUrl) { }
+        protected BaseApi(string baseUrl) : this(Region.EUW1, baseUrl) { }
 
-        public async Task<TReturn> Execute<TReturn>(string resource)
+        protected async Task<TReturn> Execute<TReturn>(string action)
         {
-            var response = await _client.GetAsync(_baseUrl + resource);
+            var response = await _client.GetAsync(_baseUrl + action);
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
